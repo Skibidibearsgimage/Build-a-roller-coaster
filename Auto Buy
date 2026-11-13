@@ -67,16 +67,145 @@ local GearItems = {
     ["Magnet"] = { price = 75000000, order = 10 },
     ["Magic Sponge"] = { price = 150000000, order = 11 },
     ["Galaxy Time Dial"] = { price = 1000000, order = 12 },
-
-
 }
 
--- ===================== Decoration Shop Data TEST!! =====================
+-- ===================== Decoration Shop Data =====================
 local DecorationItems = {
-	["Dirt Tile"] = { price = 1000 },
-
-
+    ["Dirt Tile"] = { price = 1000 },
+    ["Dirt Pad"] = { price = 1500 },
+    ["Dirt Slab"] = { price = 1500 },
+    ["Stone Tile"] = { price = 2500 },
+    ["Stone Pad"] = { price = 5000 },
+    ["Stone Slab"] = { price = 5000 },
+    ["Wood Wall"] = { price = 5000 },
+    ["Big Dirt Tile"] = { price = 7500 },
+    ["Big Dirt Pad"] = { price = 10000 },
+    ["Wood Floor"] = { price = 10000 },
+    ["Wood Beam"] = { price = 10000 },
+    ["Brick Wall"] = { price = 10000 },
+    ["Brick Floor"] = { price = 10000 },
+    ["Recycling Bin"] = { price = 10000 },
+    ["Thorn Bush"] = { price = 10000 },
+    ["Big Stone Tile"] = { price = 12500 },
+    ["Rock"] = { price = 12500 },
+    ["Big Stone Pad"] = { price = 15000 },
+    ["Wood Fence"] = { price = 15000 },
+    ["Bush"] = { price = 22500 },
+    ["Snow Tile"] = { price = 25000 },
+    ["Sand Tile"] = { price = 25000 },
+    ["Glass Wall"] = { price = 25000 },
+    ["Glass Floor"] = { price = 25000 },
+    ["Sunflower"] = { price = 25000 },
+    ["Hedge"] = { price = 25000 },
+    ["Hedge Corner"] = { price = 25000 },
+    ["Gravestone"] = { price = 25000 },
+    ["Grass Tile"] = { price = 30000 },
+    ["Wood Stairs"] = { price = 33300 },
+    ["Snow Pad"] = { price = 35000 },
+    ["Sand Pad"] = { price = 35000 },
+    ["Grass Pad"] = { price = 37500 },
+    ["Big Grass Tile"] = { price = 42500 },
+    ["Big Snow Tile"] = { price = 50000 },
+    ["Ice Tile"] = { price = 50000 },
+    ["Big Sand Tile"] = { price = 50000 },
+    ["Metal Beam"] = { price = 50000 },
+    ["Metal Wall"] = { price = 50000 },
+    ["Metal Floor"] = { price = 50000 },
+    ["Road"] = { price = 50000 },
+    ["Red Stool"] = { price = 50000 },
+    ["Blue Stool"] = { price = 50000 },
+    ["Orange Stool"] = { price = 50000 },
+    ["Road (Corner)"] = { price = 60000 },
+    ["Big Grass Pad"] = { price = 67500 },
+    ["Ice Pad"] = { price = 70000 },
+    ["Big Snow Pad"] = { price = 75000 },
+    ["Big Sand Pad"] = { price = 75000 },
+    ["Wood Window Wall"] = { price = 75000 },
+    ["Road (T)"] = { price = 75000 },
+    ["Glass Window"] = { price = 75000 },
+    ["Trashcan"] = { price = 75000 },
+    ["Bench"] = { price = 75000 },
+    ["Seat Chair"] = { price = 75000 },
+    ["Stone Fence"] = { price = 75000 },
+    ["Road (End)"] = { price = 80000 },
+    ["Big Ice Tile"] = { price = 100000 },
+    ["Road (Cross)"] = { price = 100000 },
+    ["Flag Crate"] = { price = 100000 },
+    ["Circular Chair"] = { price = 100000 },
+    ["Wood Barrel"] = { price = 100000 },
+    ["Metal Barrel"] = { price = 100000 },
+    ["Big Ice Pad"] = { price = 150000 },
+    ["Tile Floor"] = { price = 150000 },
+    ["Small Fountain"] = { price = 150000 },
+    ["Banner Crate"] = { price = 150000 },
+    ["Rune Stone"] = { price = 150000 },
+    ["Sign Crate"] = { price = 175000 },
+    ["Counter Chair"] = { price = 175000 },
+    ["Counter"] = { price = 175000 },
+    ["Castle Wall"] = { price = 200000 },
+    ["Wheelbarrow"] = { price = 200000 },
+    ["Light Post"] = { price = 212500 },
+    ["Big Tile Floor"] = { price = 250000 },
+    ["Red Ticket Booth"] = { price = 250000 },
+    ["Green Ticket Booth"] = { price = 250000 },
+    ["Yellow Ticket Booth"] = { price = 250000 },
+    ["Bonfire"] = { price = 250000 },
+    ["Castle Pillar"] = { price = 300000 },
+    ["Enchanted Flower"] = { price = 350000 },
+    ["Cactus"] = { price = 400000 },
+    ["Big Rock"] = { price = 500000 },
+    ["Marble Wall"] = { price = 500000 },
+    ["Marble Floor"] = { price = 500000 },
+    ["Ladder"] = { price = 500000 },
+    ["Pine Tree"] = { price = 500000 },
+    ["Green Umbrella"] = { price = 500000 },
+    ["Red Umbrella"] = { price = 500000 },
+    ["Blue Umbrella"] = { price = 500000 },
+    ["Green Awning"] = { price = 500000 },
+    ["Yellow Awning"] = { price = 500000 },
+    ["Purple Awning"] = { price = 500000 },
+    ["Red Awning"] = { price = 500000 },
+    ["Glowing Mushroom"] = { price = 500000 },
+    ["Bookshelf"] = { price = 500000 },
+    ["Castle Gate"] = { price = 500000 },
+    ["Portcullis"] = { price = 600000 },
+    ["Balloons"] = { price = 650000 },
+    ["Castle Gate Open"] = { price = 750000 },
+    ["Wagon"] = { price = 750000 },
+    ["Cauldron"] = { price = 750000 },
+    ["Maple Tree"] = { price = 850000 },
+    ["Portcullis Open"] = { price = 900000 },
+    ["Wood Arch"] = { price = 1000000 },
+    ["Oil Spill"] = { price = 1000000 },
+    ["Metal Bird Cage"] = { price = 1000000 },
+    ["Dead Tree"] = { price = 1500000 },
+    ["Palm Tree"] = { price = 1500000 },
+    ["Circular Table"] = { price = 1500000 },
+    ["Picnic Table"] = { price = 2000000 },
+    ["Well"] = { price = 2000000 },
+    ["Mushroom Tree"] = { price = 2500000 },
+    ["Stone Arch"] = { price = 2500000 },
+    ["Vine Wall"] = { price = 2500000 },
+    ["Spotlight"] = { price = 5000000 },
+    ["Campfire"] = { price = 5000000 },
+    ["Crossbow"] = { price = 5000000 },
+    ["Stone Tower"] = { price = 7500000 },
+    ["Autumn Tree"] = { price = 8500000 },
+    ["Catapult"] = { price = 15000000 },
+    ["Broken Stone Arch"] = { price = 25000000 },
+    ["Fountain"] = { price = 25000000 },
+    ["Drawbridge"] = { price = 25000000 },
+    ["Huge Mossy Rock"] = { price = 50000000 },
+    ["Huge Flag Crate"] = { price = 50000000 },
+    ["Castle Tower"] = { price = 50000000 },
+    ["Rock Mountain"] = { price = 100000000 },
+    ["Cherry Blossom Tree"] = { price = 250000000 },
+    ["Hotdog Stand"] = { price = 500000000 },
+    ["Clock Tower"] = { price = 1000000000 },
+    ["Windmill"] = { price = 1000000000 },
+    ["Enchanted Tree"] = { price = 1000000000 },
 }
+
 
 -- ===================== Load Rayfield =====================
 local Rayfield = loadstring(game:HttpGet("https://sirius.menu/rayfield"))()
@@ -211,9 +340,8 @@ end
 
 
 -- ==========================================================
--- Decoration Shop Tab TEST!!
+-- Decoration Shop Tab
 -- ==========================================================
-
 local DecorationTab = Window:CreateTab("Decoration Shop", "leaf")
 
 DecorationTab:CreateButton({
@@ -229,43 +357,56 @@ DecorationTab:CreateButton({
 
 
 local DecorationShopToggles = {}
+local RepeatBuyLoops = {}
 
-local function buyItem(itemName)
-	local success, result = pcall(function()
-		return DecorationShop:InvokeServer("buy", "Decorations", itemName)
-	end)
-	if success then
-		print("[SRBX] Bought:", itemName)
-	else
-		warn("[SRBX] Failed to buy:", itemName, result)
+local function startRepeatBuy(itemName)
+	if RepeatBuyLoops[itemName] then
+		return
 	end
+
+	RepeatBuyLoops[itemName] = true
+
+	task.spawn(function()
+		while DecorationShopToggles[itemName] == true do
+			local success, result = pcall(function()
+				return DecorationShop:InvokeServer("buy", "Decorations", itemName)
+			end)
+
+			if success then
+				print("[SRBX] Bought:", itemName, result)
+			else
+				warn("[SRBX] Buy failed:", itemName, result)
+			end
+
+			task.wait(0.25) -- change this to 0.1, 0.25, 0.5 depending on how fast you want it
+		end
+
+		RepeatBuyLoops[itemName] = nil
+	end)
 end
 
-task.spawn(function()
-	while true do
-		for name, enabled in pairs(DecorationShopToggles) do
-			if enabled then
-				buyItem(name)
-				task.wait(0)
-			end
-		end
-		task.wait(0)
-	end
+local sortedDecorations = {}
+for name, info in pairs(DecorationItems) do
+	table.insert(sortedDecorations, {
+		name = name,
+		price = info.price,
+	})
+end
+
+table.sort(sortedDecorations, function(a, b)
+	return a.price < b.price
 end)
 
-local sortedItems = {}
-for name, info in pairs(ShopItems) do
-	table.insert(sortedItems, { name = name, price = info.price })
-end
-table.sort(sortedItems, function(a, b) return a.price < b.price end)
-
-for _, item in ipairs(sortedItems) do
-	DecorationShopTab:CreateToggle({
+for _, item in ipairs(sortedDecorations) do
+	DecorationTab:CreateToggle({
 		Name = string.format("%s  %s", item.name, item.price),
 		CurrentValue = false,
-		Callback = function(v)
-			DecorationShopToggles[item.name] = v
-			print(string.format("[SRBX] DecorationShop %s: %s", v and "enabled" or "disabled", item.name))
+		Callback = function(enabled)
+			DecorationShopToggles[item.name] = enabled
+
+			if enabled then
+				startRepeatBuy(item.name)
+			end
 		end,
 	})
 end
