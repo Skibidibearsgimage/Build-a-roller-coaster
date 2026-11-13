@@ -94,7 +94,7 @@ local Window = Rayfield:CreateWindow({
 -- ==========================================================
 --  Tracks Tab
 -- ==========================================================
-local AutoBuyTab = Window:CreateTab("Auto Buy", "shopping-cart")
+local AutoBuyTab = Window:CreateTab("Track Shop", "roller-coaster")
 
 AutoBuyTab:CreateButton({
 	Name = "Open Shop Window",
@@ -153,7 +153,8 @@ end
 -- ==========================================================
 -- Gear Shop Tab
 -- ==========================================================
-local GearTab = Window:CreateTab("Gear Shop", "hammer")
+local GearTab = Window:CreateTab("Gear Shop", "cog")
+
 
 GearTab:CreateButton({
 	Name = "Open Gear Shop Window",
@@ -212,25 +213,59 @@ end
 -- ==========================================================
 -- Decoration Shop Tab TEST!!
 -- ==========================================================
+
 local DecorationTab = Window:CreateTab("Decoration Shop", "leaf")
 
-for name, info in pairs(DecorationItems) do
-    DecorationTab:CreateSection(name .. " - $" .. info.price)
-    
-    if info.info then
-        DecorationTab:CreateParagraph({
-            Title = name,
-            Content = info.info
-        })
-    end
-    
-    DecorationTab:CreateButton({
-        Name = "Buy " .. name,
-        Callback = function()
-            local success, message = DecorationShop:InvokeServer("buy", "Decorations", name)
-            if not success then
-                warn("Purchase failed:", message)
-            end
-        end
-    })
+DecorationTab:CreateButton({
+	Name = "Open Gear Shop Window",
+	Callback = function()
+		local ReplicatedStorage = game:GetService("ReplicatedStorage")
+		local OpenWindow = ReplicatedStorage.ClientEvents.OpenWindow
+		OpenWindow:Fire("DecorationShop")
+		print("[SRBX] Fired OpenWindow('DecorationShop') for Daisy Decoration Shop")
+	end,
+})
+
+
+
+local DecorationShopToggles = {}
+
+local function buyItem(itemName)
+	local success, result = pcall(function()
+		return DecorationShop:InvokeServer("buy", "Decorations", itemName)
+	end)
+	if success then
+		print("[SRBX] Bought:", itemName)
+	else
+		warn("[SRBX] Failed to buy:", itemName, result)
+	end
+end
+
+task.spawn(function()
+	while true do
+		for name, enabled in pairs(DecorationShopToggles) do
+			if enabled then
+				buyItem(name)
+				task.wait(0)
+			end
+		end
+		task.wait(0)
+	end
+end)
+
+local sortedItems = {}
+for name, info in pairs(ShopItems) do
+	table.insert(sortedItems, { name = name, price = info.price })
+end
+table.sort(sortedItems, function(a, b) return a.price < b.price end)
+
+for _, item in ipairs(sortedItems) do
+	DecorationShopTab:CreateToggle({
+		Name = string.format("%s  %s", item.name, item.price),
+		CurrentValue = false,
+		Callback = function(v)
+			DecorationShopToggles[item.name] = v
+			print(string.format("[SRBX] AutoBuy %s: %s", v and "enabled" or "disabled", item.name))
+		end,
+	})
 end
