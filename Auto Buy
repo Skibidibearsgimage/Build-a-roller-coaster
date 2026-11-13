@@ -217,7 +217,7 @@ end
 local DecorationTab = Window:CreateTab("Decoration Shop", "leaf")
 
 DecorationTab:CreateButton({
-	Name = "Open Gear Shop Window",
+	Name = "Open Decoration Shop Window",
 	Callback = function()
 		local ReplicatedStorage = game:GetService("ReplicatedStorage")
 		local OpenWindow = ReplicatedStorage.ClientEvents.OpenWindow
@@ -265,7 +265,7 @@ for _, item in ipairs(sortedItems) do
 		CurrentValue = false,
 		Callback = function(v)
 			DecorationShopToggles[item.name] = v
-			print(string.format("[SRBX] AutoBuy %s: %s", v and "enabled" or "disabled", item.name))
+			print(string.format("[SRBX] DecorationShop %s: %s", v and "enabled" or "disabled", item.name))
 		end,
 	})
 end
